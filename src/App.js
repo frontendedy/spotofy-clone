@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Slider from './components/Slider';
 import { getData } from './Api';
 import Faq from './components/Faq';
+import Player from './components/Player';
 
 function App() {
   const [topAlbums, setTopAlbums] = useState([])
@@ -25,12 +26,13 @@ function App() {
   }, [])
 
   return (
-    <div className="App bg-black">
+    <div className="App bg-black pb-[200px]">
       <NavBar />
       <Hero />
       <Slider data={topAlbums} heading="Top Albums" />
       <Slider data={newAlbums} heading="New Albums" />
-      <Faq/>
+      <Faq />
+      <Player playing={true} />
     </div>
   );
 }
