@@ -17,7 +17,7 @@ function App() {
         setData({...data, topAlbums: res.data}))
       .catch(err => console.log(err))
 
-  }, [])
+  }, [data])
 
   // useEffect(()=>{
   //   getData('albums/new')
