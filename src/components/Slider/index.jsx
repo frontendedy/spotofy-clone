@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 
-const Slider = ({data}) => {
+const Slider = ({data, heading}) => {
   
   return (
-    <div className='mt-12 mx-12 flex gap-10 justify-center relative'>
+    <div className='mt-12 mx-12'>
+    <h2 className='text-[20px] text-white font-semibold'>{heading}</h2>
+    <div className='mt-5 flex gap-10 justify-center relative'>
       <Swiper
         spaceBetween={2}
         slidesPerView={6}
@@ -24,6 +26,7 @@ const Slider = ({data}) => {
         }
         {/* <button className='w-[52px] h-[52px] bg-green border absolute'>Next</button> */}
       </Swiper>
+    </div>
     </div>
   )
 }

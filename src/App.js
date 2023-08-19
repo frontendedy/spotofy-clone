@@ -19,19 +19,19 @@ function App() {
 
   }, [data])
 
-  // useEffect(()=>{
-  //   getData('albums/new')
-  //   .then(res =>
-  //     setData({...data, newAlbums: res.data}))
-  //   .catch(err => console.log(err))
-  // },[])
+  useEffect(()=>{
+    getData('albums/new')
+    .then(res =>
+      setData({...data, newAlbums: res.data}))
+    .catch(err => console.log(err))
+  },[data])
   
   return (
     <div className="App bg-black">
       <NavBar />
       <Hero />
-      <Slider data={data.topAlbums}/>
-      <Slider data={data.topAlbums}/>
+      <Slider data={data.topAlbums} heading="Top Albums"/>
+      <Slider data={data.newAlbums} heading="New Albums"/>
     </div>
   );
 }
