@@ -11,6 +11,10 @@ import Section from './components/Section';
 function App() {
   const [topAlbums, setTopAlbums] = useState([])
   const [newAlbums, setNewAlbums] = useState([])
+  const [songs, setSongs] = useState([])
+  const genere = ['All', 'Rock', 'Pop', 'Jazz', 'Blues']
+  // const [genere, setGenere] = useState([])
+  const [selected, setSelected] = useState('All')
 
   useEffect(() => {
     getData('albums/top')
@@ -26,6 +30,15 @@ function App() {
       .catch(err => console.log(err))
   }, [])
 
+  useEffect(() => {
+    getData('songs')
+      .then(res =>
+        setSongs(res.data))
+      .catch(err => console.log(err))
+
+      // console.log(genere, 'ghk')
+  }, [])
+
   return (
     <div className="App bg-black pb-[200px]">
       <NavBar />
@@ -34,8 +47,9 @@ function App() {
       <Slider data={newAlbums} heading="New Albums" /> */}
       <Section data={topAlbums} heading="Top Albums" />
       <Section data={newAlbums} heading="New Albums" />
+      <Section data={songs} heading="Songs" genere={genere} selected={selected} setSelected={setSelected} />
       <Faq />
-      <Player playing={true} />
+      <Player playing={false} />
     </div>
   );
 }
