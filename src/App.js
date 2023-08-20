@@ -6,6 +6,7 @@ import Slider from './components/Slider';
 import { getData } from './Api';
 import Faq from './components/Faq';
 import Player from './components/Player';
+import Section from './components/Section';
 
 function App() {
   const [topAlbums, setTopAlbums] = useState([])
@@ -29,8 +30,10 @@ function App() {
     <div className="App bg-black pb-[200px]">
       <NavBar />
       <Hero />
-      <Slider data={topAlbums} heading="Top Albums" />
-      <Slider data={newAlbums} heading="New Albums" />
+      {/* <Slider data={topAlbums} heading="Top Albums" />
+      <Slider data={newAlbums} heading="New Albums" /> */}
+      <Section data={topAlbums} heading="Top Albums" />
+      <Section data={newAlbums} heading="New Albums" />
       <Faq />
       <Player playing={true} />
     </div>
