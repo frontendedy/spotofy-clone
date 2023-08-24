@@ -36,7 +36,7 @@ const Section = ({ data, heading, genere, setSelected, selected }) => {
             }
 
             {
-                show ? <div className='flex flex-wrap gap-[20px]'>
+                show ? <div className='flex flex-wrap gap-[20px] text-white'>
                     {!data.length ? 'Loading' : data.map((ele) =>
                         <SongCard data={ele} />
                     )}

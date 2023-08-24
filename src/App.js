@@ -21,6 +21,7 @@ function App() {
       .then(res =>
         setTopAlbums(res.data))
       .catch(err => console.log(err))
+      // console.log(topAlbums?.songs?.length)
   }, [])
 
   useEffect(() => {
@@ -35,9 +36,9 @@ function App() {
       .then(res =>
         setSongs(res.data))
       .catch(err => console.log(err))
+  }, [selected])
 
-      // console.log(genere, 'ghk')
-  }, [])
+
 
   return (
     <div className="App bg-black pb-[200px]">
