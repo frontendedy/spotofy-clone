@@ -11,7 +11,28 @@ const Slider = ({ data }) => {
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={2}
-        slidesPerView={6}
+        // slidesPerView={6}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          400:{
+            slidesPerView:2,
+          },
+          639: {
+            slidesPerView: 3,
+          },
+          865:{
+            slidesPerView:4
+          },
+          1000:{
+            slidesPerView:6
+          },
+          1500:{
+            slidesPerView:7
+          }
+        }}
+      
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}

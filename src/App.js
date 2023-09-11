@@ -50,7 +50,7 @@ function App() {
       <Section data={newAlbums} heading="New Albums" />
       <Section data={songs} heading="Songs" genere={genere} selected={selected} setSelected={setSelected} />
       <Faq />
-      <Player playing={false} />
+      <Player playing={true} />
     </div>
   );
 }
